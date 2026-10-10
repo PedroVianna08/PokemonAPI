@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pesquise Pokémon e organize seus favoritos.">
+  <title>PokéBusca</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="PokéBusca - início">
+      <span class="brand-ball" aria-hidden="true">●</span>
+      <span>Poké<span>Busca</span></span>
+    </a>
+    <p>Seu próximo Pokémon favorito está a uma busca de distância.</p>
+  </header>
+
+  <main class="container">
+    <section class="hero panel">
+      <span class="eyebrow">POKÉDEX DIGITAL</span>
+      <h1>Quem você vai <span>descobrir</span> hoje?</h1>
+      <p class="intro">Pesquise um Pokémon para ver sua imagem, tipo, altura e peso.</p>
+      <form id="form-busca" class="search-form">
+        <label class="sr-only" for="campo-busca">Nome ou número do Pokémon</label>
+        <input id="campo-busca" type="search" placeholder="Ex.: pikachu ou 25" autocomplete="off">
+        <button type="submit" id="botao-buscar">Pesquisar <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="examples">Experimente: Pikachu, Bulbasaur, Charizard ou Mewtwo</p>
+    </section>
+
+    <section class="section-block" aria-live="polite">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">RESULTADO</span>
+          <h2>Explorar Pokémon</h2>
+        </div>
+      </div>
+      <div id="resultado" class="result-area">
+        <div class="empty-state panel">
+          <div class="empty-icon" aria-hidden="true">⌕</div>
+          <h3>Sua próxima descoberta começa aqui</h3>
+          <p>Digite um nome ou número acima para começar a pesquisa.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block favorites-section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">SUA COLEÇÃO</span>
+          <h2>Pokémon favoritos <span class="star">★</span></h2>
+          <p class="section-description">Seus favoritos serão armazenados no Supabase.</p>
+        </div>
+        <button id="botao-atualizar" class="button-secondary" type="button">Atualizar lista</button>
+      </div>
+      <div id="lista-favoritos" class="favorites-grid">
+        <div class="empty-state panel compact">
+          <h3>Favoritos ainda não carregados</h3>
+          <p>Configure o Supabase para ativar a coleção persistente.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>PokéBusca · Projeto acadêmico com PokéAPI, Supabase e Docker.</p>
+  </footer>
+</body>
+</html>
